@@ -1,16 +1,11 @@
-window.StringCalculator = StringCalculator = {
-  add: function(inputString) {
-    if(inputString === '') {
-      return 0;
+var StringCalculator = (function (window, undefined) {
+  var api = {
+    add: function ( input ) {
+      input = input || 0;
+
+      return input;
     }
+  };
 
-    var result = 0;
-    var inputStrings = inputString.split(',');
-
-    for(var i=0; i<inputStrings.length; i++) {
-      result += parseInt(inputStrings[i]);
-    }
-
-    return result;
-  }
-}
+  return api;
+})(window, undefined);

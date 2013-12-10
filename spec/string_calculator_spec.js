@@ -1,30 +1,19 @@
+// implement chai's should interface
+var should = chai.should();
+
 describe("StringCalculator", function() {
 
-  describe("when an empty string is passed in", function() {
-    it("returns 0", function() {
-      var result = StringCalculator.add("");
-      assert(result === 0);
+  describe('#add()', function() {
+    it('should return 0 for an empty string', function() {
+      StringCalculator.add('').should.eq(0);
     });
-  });
 
-  describe("when a number is passed in", function() {
-    it("returns the number", function() {
-      var result = StringCalculator.add("2");
-      assert(result === 2);
+    it('should return the number if only one is passed', function() {
+      StringCalculator.add('1').should.eq(1);
     });
-  });
 
-  describe("when string is passed in", function() {
-    it("returns NaN", function() {
-      var result = StringCalculator.add("a");
-      assert(isNaN(result));
-    });
-  });
-
-  describe("when '1,2' is passed in", function() {
-    it("returns 3", function() {
-      var result = StringCalculator.add("1,2");
-      assert(result === 3);
+    it('should sum the two numbers', function() {
+      StringCalculator.add('1,2').should.eq(3);
     });
   });
 });
