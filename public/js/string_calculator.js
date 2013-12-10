@@ -1,9 +1,21 @@
 var StringCalculator = (function (window, undefined) {
   var api = {
     add: function ( input ) {
-      input = input || 0;
+      var numbers,
+        sum;
 
-      return input;
+      if (typeof input === undefined || input.length <= 0) {
+        return 0;
+      }
+
+      if (~input.indexOf(',')) {
+        numbers = input.split(',');
+        sum = numbers[0] + numbers[1];
+      } else {
+        sum = numbers;
+      }
+
+      return Number(sum);
     }
   };
 
