@@ -12,7 +12,10 @@ var StringCalculator = (function (window, undefined) {
 
       if (~numbers.indexOf(',')) {
         numbers = numbers.split(',');
-        sum = Math.floor(numbers[0]) + Math.floor(numbers[1]);
+
+        sum = numbers.reduce(function(a, b) {
+          return Math.floor(a) + Math.floor(b);
+        });
       } else {
         sum = Math.floor(numbers);
       }
