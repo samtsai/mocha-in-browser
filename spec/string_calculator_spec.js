@@ -15,5 +15,10 @@ describe("StringCalculator", function() {
     it('should sum the two numbers', function() {
       StringCalculator.add('1,2').should.eq(3);
     });
+
+    // Allow the Add method to handle an unknown amount of numbers
+    it('should sum all the numbers passed in', function() {
+      StringCalculator.add('1,2,3,4,5').should.eq(1+2+3+4+5);
+    });
   });
 });
