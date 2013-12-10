@@ -8,14 +8,16 @@ var StringCalculator = (function (window, undefined) {
         return 0;
       }
 
-      if (~input.indexOf(',')) {
-        numbers = input.split(',');
-        sum = numbers[0] + numbers[1];
+      numbers = input;
+
+      if (~numbers.indexOf(',')) {
+        numbers = numbers.split(',');
+        sum = Math.floor(numbers[0]) + Math.floor(numbers[1]);
       } else {
-        sum = numbers;
+        sum = Math.floor(numbers);
       }
 
-      return Number(sum);
+      return sum;
     }
   };
 
